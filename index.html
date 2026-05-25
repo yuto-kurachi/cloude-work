@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>倉地 勇斗 / Yuto Kurachi</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+      background: #0f0f1a;
+      color: #e8e8f0;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 80px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      border-radius: 50%;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      margin: 0 auto 24px;
+      box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .furigana {
+      font-size: 0.9rem;
+      color: #a5b4fc;
+      letter-spacing: 0.2em;
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #94a3b8;
+      font-style: italic;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    section {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #a5b4fc;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(165, 180, 252, 0.2);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .info-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .info-card .label {
+      font-size: 0.75rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+
+    .info-card .value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+
+    .career-text {
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 3px solid #6366f1;
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      line-height: 1.8;
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
+
+    .career-text strong {
+      color: #a5b4fc;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 10px;
+      padding: 14px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .skill-item .icon {
+      font-size: 1.4rem;
+      width: 36px;
+      text-align: center;
+    }
+
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .hobby-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .hobby-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(99, 102, 241, 0.4);
+    }
+
+    .hobby-card .emoji {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .hobby-card .name {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .hobby-card .desc {
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+
+    .quote {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .quote p {
+      font-size: 1.15rem;
+      color: #c7d2fe;
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      color: #334155;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="avatar">👤</div>
+    <h1>倉地 勇斗</h1>
+    <p class="furigana">くらち ゆうと</p>
+    <p class="tagline">調剤薬局 / 在宅医療 / 地域連携</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>基本情報</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="label">氏名</div>
+          <div class="value">倉地 勇斗</div>
+        </div>
+        <div class="info-card">
+          <div class="label">所属</div>
+          <div class="value">調剤薬局（在宅特化）</div>
+        </div>
+        <div class="info-card">
+          <div class="label">社員数</div>
+          <div class="value">80人</div>
+        </div>
+        <div class="info-card">
+          <div class="label">資本金</div>
+          <div class="value">100万円</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>仕事・経歴</h2>
+      <div class="career-text">
+        <strong>調剤薬局での実務経験</strong>を積み、現在は<strong>在宅医療・地域連携</strong>を軸に活動中。<br>
+        患者さんの自宅に寄り添う薬局づくりを日々実践しています。
+      </div>
+      <div class="skill-list">
+        <div class="skill-item">
+          <span class="icon">🏥</span>
+          <span>在宅医療・地域との連携</span>
+        </div>
+        <div class="skill-item">
+          <span class="icon">💊</span>
+          <span>調剤薬局の現場運営</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>趣味</h2>
+      <div class="hobby-grid">
+        <div class="hobby-card">
+          <div class="emoji">🏀</div>
+          <div class="name">バスケ</div>
+          <div class="desc">チームで動く楽しさが好き</div>
+        </div>
+        <div class="hobby-card">
+          <div class="emoji">🚗</div>
+          <div class="name">車</div>
+          <div class="desc">走ることへの情熱</div>
+        </div>
+        <div class="hobby-card">
+          <div class="emoji">⌚</div>
+          <div class="name">時計</div>
+          <div class="desc">こだわりを形にするもの</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="quote">
+        <p>在宅医療の現場から、地域をもっと元気にしたい。</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 倉地 勇斗</p>
+  </footer>
+
+</body>
+</html>
